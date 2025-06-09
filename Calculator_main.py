@@ -5,10 +5,10 @@ from neg_num_err import NegativeNumberError # Importa la excepción personalizad
 class Calculator:
     def __init__(self, master):
         self.master = master
-        master.title("Mi Calculadora Única") # Personalización del diseño.
+        master.title("Super Calculadora 3000") # Personalización del diseño.
         master.geometry("300x450")
         master.resizable(False, False)
-        master.configure(bg="#2c3e50")
+        master.configure(bg="#471654")
 
         self.current_expression = ""
         self.result_displayed = False
@@ -16,7 +16,7 @@ class Calculator:
         # Objeto gráfico: Entry para mostrar números y resultados (texto).
         self.display = tk.Entry(
             master, width=18, font=("Arial", 24), bd=5, relief="flat",
-            bg="#ecf0f1", fg="#2c3e50", justify="right"
+            bg="#ecf0f1", fg="#0d1319", justify="right"
         )
         self.display.grid(row=0, column=0, columnspan=4, pady=20, padx=10)
 
@@ -26,14 +26,14 @@ class Calculator:
             ('4', 2, 0), ('5', 2, 1), ('6', 2, 2), ('*', 2, 3, True),
             ('1', 3, 0), ('2', 3, 1), ('3', 3, 2), ('-', 3, 3, True),
             ('0', 4, 0), ('.', 4, 1), ('C', 4, 2, False, "#c0392b"), ('+', 4, 3, True),
-            ('=', 5, 0, False, "#c0392b", 4) # Botón '=' abarca 4 columnas.
+            ('=', 5, 0, False, "#25b8d9", 4) # Botón '=' abarca 4 columnas.
         ]
         
         # Creación de los objetos gráficos Button.
         for item in buttons_config:
             text, row, col = item[0], item[1], item[2]
             is_operator = item[3] if len(item) > 3 else False
-            bg_color = item[4] if len(item) > 4 else ("#e67e22" if is_operator else "#34495e")
+            bg_color = item[4] if len(item) > 4 else ("#c4a81c" if is_operator else "#0c5299")
             fg_color = "#ecf0f1"
             columnspan = item[5] if len(item) > 5 else 1
 
